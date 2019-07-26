@@ -1,6 +1,7 @@
 <?php
 namespace Pagely\Component\HttpMock;
 
+use GuzzleHttp\Exception\ConnectException;
 use hmmmath\Fibonacci\FibonacciFactory;
 use Symfony\Component\Process\Process;
 use RuntimeException;
@@ -112,7 +113,7 @@ class Server extends Process
                 }
                 $success = true;
                 break;
-            } catch (ServerException $e) {
+            } catch (ConnectException $e) {
                 continue;
             }
         }
