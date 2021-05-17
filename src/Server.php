@@ -1,6 +1,7 @@
 <?php
 namespace Pagely\Component\HttpMock;
 
+use GuzzleHttp\Exception\ServerException;
 use hmmmath\Fibonacci\FibonacciFactory;
 use Symfony\Component\Process\Process;
 use RuntimeException;
@@ -107,7 +108,7 @@ class Server extends Process
             try {
                 usleep($sleepTime);
                 $r = $this->getClient()->head('/_me');
-                if ($r->getStatusCode() != 418) {
+                if ($r->getStatusCode() !== 418) {
                     continue;
                 }
                 $success = true;
