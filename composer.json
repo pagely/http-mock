@@ -34,5 +34,14 @@
     },
     "autoload-dev": {
         "psr-4": {"Pagely\\Component\\HttpMock\\Tests\\": "tests/"}
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://gdartifactory1.jfrog.io/artifactory/api/composer/composer-virt/"
+        },
+        {
+            "packagist.org": false
+        }
+    ]
 }
